@@ -8,7 +8,7 @@
  * @n: The number of bytes from s2 to concatenate to s1
  * Return: A pointer to the resulting string
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n);
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *p;
 	unsigned int t = 0, r = 0, len1 = 0, len2 = 0;
@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 		len2++;
 
 	if (n < len2)
-		p = (malloc(sizeof(char) * (len1 + n + 1));
+		p = malloc(sizeof(char) * (len1 + n + 1));
 	else
 		p = malloc(sizeof(char) * (len1 + len2 + 2));
 	if (!p)
@@ -33,6 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 		p[t++] = s2[r++];
 	while (n >= len2 && t < (len1 + len2))
 		p[t++] = s2[r++];
-		p[t] = '\0';
+		
+	p[t] = '\0';
 		return (p);
 }
