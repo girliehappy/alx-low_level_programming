@@ -13,10 +13,10 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int t, sum = 0;
 
 	va_start(allprmt, n);
-       
+
 	for (t = 0; t < n; t++)
-       		sum += va_arg(allprmt, int);
-	
+		sum += va_arg(allprmt, int);
+
 	va_end(allprmt);
 
 	return (sum);
