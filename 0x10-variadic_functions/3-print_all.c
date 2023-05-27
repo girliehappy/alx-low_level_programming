@@ -4,49 +4,47 @@
 
 /**
  * print_all - A function that prints anything
- * @format: The list of types of arguements passed to the function
+ * @format: A list of types of arguements passed to the function
  * Return: 0
  */
 void print_all(const char * const format, ...)
 {
 	int t = 0;
-	char *str, *sep = "";
+	char *str, *sept = "";
 
-	va_list list;
+	va_list print_anything;
 
-	va_start(list, format);
+	va_start(print_anything, format);
 
 	if (format)
 	{
-		
-		while (format[t]);
+		while (format[t])
 		{
-	
 			switch (format[t])
-		{
-			case 'c':
-				printf("%s%c", sep, va_arg(list, int));
-				break;
-			case 'i':
-				printf("%s%c", sep, va_arg(list, int));
-				break;
-			case 'f':
-				printf("%s%c", sep, va_arg(list, int));
-				break;
-			case 's':
-				str = va_arg(list, char *);
-				if (!str)
-					str = "(nil)";
-				printf("%s%s", sep, str);
-				break;
-			default:
-				t++;
-				continue;
+			{
+				case 'c':
+					printf("%s%c", sept, va_arg(print_anything, int));
+					break;
+				case 'i':
+					printf("%s%d", sept, va_arg(print_anything, int));
+					break;
+				case 'f':
+					printf("%s%f", sept, va_arg(print_anything, double));
+					break;
+				case 's':
+					str = va_arg(print_anything, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", sept, str);
+					break;
+				default:
+					t++;
+					continue;
+			}
+			sept = ", ";
+			t++;
 		}
-		sep = ", ";
-		t++;
-	}
 	}
 	printf("\n");
-	va_end(list);
+	va_end(print_anything);
 }
