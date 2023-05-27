@@ -3,7 +3,7 @@
 
 /**
  * n_strlen - A function that returns the length of a string
- * @h: The string to evaluate
+ * @s: The string to evaluate
  * Return: The length of the string
  */
 int n_strlen(char *s)
@@ -63,7 +63,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ndog = malloc(sizeof(dog_t));
 	if (ndog == NULL)
 		return (NULL);
-	
+
 	ndog->name = malloc(sizeof(char) * (lent1 + 1));
 	if (ndog->name == NULL)
 	{
@@ -71,7 +71,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	ndog->owner = malloc(sizeof(char) * (lent2 + 1));
-	if(ndog->owner == NULL)
+	if (ndog->owner == NULL)
 	{
 		free(ndog);
 		free(ndog->name);
